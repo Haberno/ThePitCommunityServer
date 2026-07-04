@@ -30,6 +30,6 @@ object BountySolvent : Item {
     fun onPotionDrink(event: PlayerItemConsumeEvent) {
         event.isCancelled = true
 
-        event.player.itemInHand = null
+        event.item.amount = 0;
     }
 }

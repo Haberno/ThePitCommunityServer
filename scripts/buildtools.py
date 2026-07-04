@@ -15,7 +15,7 @@ build_tools_file = "buildtools.jar"
 
 # Determine the absolute path of the script's directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
-build_tools_dir = os.path.join(script_dir, "buildtools")
+build_tools_dir = os.path.join(script_dir, "buildtoodls")
 
 try:
     shutil.rmtree(build_tools_dir)
@@ -42,9 +42,6 @@ os.chdir(script_dir)
 # Determine the Java command based on the platform
 java_command = "java"
 
-if platform.system() == "Windows":
-    # Adjust the Java command for Windows
-    java_command = os.environ.get("BUILD_TOOLS_JAVA_PATH", "")
 
 subprocess.run(f'{java_command} "-jar" {build_tools_file} "--rev" {spigot_version}', cwd=build_tools_dir)
 
